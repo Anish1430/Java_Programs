@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 /*
 Take an array of size N as input.
@@ -32,6 +32,7 @@ Sample Output 0
 
  */
 
+import java.util.*;
 public class BubbleSort {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
