@@ -49,15 +49,47 @@ nums is sorted in non-decreasing order.
 
   //Create Your Own (main) Method for compiled the code.....
 
-public class RemoveDublicateFromSorted {
-    public int removeDuplicates(int[] nums) {
-        int ans=1;
-        for(int i=0;i<nums.length-1;i++) {
-            if(nums[i] != nums[i+1]) {
-                nums[ans]=nums[i+1];
-                ans++;
-            }
-        }
-        return ans;
-    }
-}
+
+
+  import java.util.Scanner;
+
+  public class RemoveDublicateFromSorted {
+
+      public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+          int length = scanner.nextInt();
+
+          // Create a sorted array and fill it with user input
+          int[] nums = new int[length];
+          for (int i = 0; i < length; i++) {
+              nums[i] = scanner.nextInt();
+          }
+          int newLength = removeDuplicates(nums);
+          for (int i = 0; i < newLength; i++) {
+              System.out.print(nums[i] + " ");
+          }
+      }
+
+      public static int removeDuplicates(int[] nums) {
+          // Handle the case of an empty array
+          if (nums.length == 0) {
+              return 0;
+          }
+
+          // Initialize the index to keep track of the modified array
+          int ans = 1;
+
+          // Iterate through the sorted array
+          for (int i = 0; i < nums.length - 1; i++) {
+              if (nums[i] != nums[i + 1]) {
+                  // If the current element is not equal to the next one, update the array
+                  nums[ans] = nums[i + 1];
+                  ans++;
+              }
+          }
+
+          // Return the length of the modified array
+          return ans;
+      }
+  }
+
